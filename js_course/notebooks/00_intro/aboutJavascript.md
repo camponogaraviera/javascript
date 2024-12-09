@@ -1,0 +1,68 @@
+# Table of Contents
+
+- Intro
+  - Interpreter vs Compiler vs JIT
+- JavaScript Internals
+  - Single Threaded 
+  - JavaScript Runtime (of the Browser)
+    - Web API
+    - JS Engine
+      - Pipeline
+      - Call Stack
+      - Memory Heap
+    - Callback Queue
+    - Event Loop
+  - Garbage Collection
+  - Memory Leaks
+  - WebAssembly 
+
+# Intro
+
+JavaScript is a high-level `event-driven` and `single-threaded` programming language `free of deadlocks`. JavaScript was originally designed to be interpreted, however, modern JavaScript engines such as V8 (used in Google Chrome and Node.js) and SpiderMonkey (used in Firefox) use [JIT](https://en.wikipedia.org/wiki/Just-in-time_compilation) compilation.
+
+## Interpreter vs Compiler vs JIT
+
+Modern JavaScript uses JIT compiled.
+
+- An interpreter translates source code into Bytecode line-by-line at run time.
+- A compiler translates source code into machine code (binary code) at compile time (before execution) for the CPU to run.
+- A JIT compiler combines an interpreter and a compiler to translate Bytecode code into machine code at run time.
+
+# JavaScript Internals
+
+## Single Threaded
+
+JavaScript is single-threaded. Single-threaded means that instructions are executed one task at a time, sequentially, in order, in a single call stack (no parallelism) and, therefore, in a synchronous way. The JavaScript engine of the runtime has only one call stack and one memory heap.
+
+## JavaScript Runtime (of the Browser)
+
+To manage memory, function calls, and to run `asynchronous (non-blocking) operations`, JavaScript needs a `runtime environment`. The JavaScript runtime environment of the web browser consists of a `web API`, a `callback queue`, an `event loop`, and an `engine`. 
+
+- `Web API:` uses C++ to perform asynchronous operations in the background such as `window fetch()` (to send HTTP requests), listen to `DOM events` (button click), schedule events with timers `window setTimeout`, `window setInterval`, and others. These operations are not native to JavaScript. The Web API does not run JavaScript code. Instead, it returns the result of the asynchronous task in the form of a callback, which the event loop of the JS engine then pushes onto the call stack for execution.
+
+- `JavaScript Engine:` is used to parse JS source code into optimized machine code (binary code). Every browser uses a different ECMAScript engine. Firefox uses the SpiderMonkey engine (the first JS engine created) and Google Chrome uses the V8 engine. The engine has two main components, a Call Stack and a Memory Heap.
+  - A typical pipeline within a JS engine looks as follows: `Source Code` -> `Parser` -> `AST` -> `Interpreter` -> `Bytecode` -> `Profiler (monitor)` -> `Compiler` -> `Optimized Code`.
+  - `Call Stack:` used to keep track of local variables (whose size/length is fixed) and the order of function calls and their execution following the LIFO method. Each function call creates a new stack frame that stores its primitive types (numbers, booleans, short strings, etc.) and references (the memory address or pointer) to objects, while `the actual object is stored in the heap`. When a string is too large, or is a part of a reference type (like a string inside an object), its actual content may be stored in the heap.
+  - `Memory Heap:` is a fixed-size region in memory used for dynamic memory allocation, i.e., to allocate memory for storing, without order, dynamic objects (hash tables, arrays, functions, ect.) created at run time since they do not have a fixed size/length (is unknown). It enables efficient storage and retrieval of data during a program's execution. Memory management is managed by the `garbage collector`.
+
+- `Callback/task Queue:` this queue holds callback functions from asynchronous operations that are ready to be executed by the engine's Call Stack.
+
+- `Event Loop:` it continuously checks if the `Call Stack` is empty. If it is, and there are tasks in the `Callback Queue` (macrotasks), the Event loop takes the first task from the Callback Queue and pushes it onto the Call Stack for execution. However, before executing a macrotask, the event loop first processes any tasks in the `microtask queue` (which includes promises, MutationObserver callbacks, etc.), and finally moves on to tasks in the `macrotask queue`.
+
+## Garbage Collection
+
+JavaScript uses Garbage collection (GC), an automatic memory management process that identifies and frees up memory, from the memory heap, that was allocated to objects, arrays, and functions that are no longer reachable or in use in a program. It helps to prevent `memory leaks` in a memory heap. For example, when an object (array or hash table) loses its reference in memory, it becomes eligible for garbage collection. It is available to high-level languages such as Python and JavaScript. In JavaScript, GC uses the [mark-and-sweep algorithm]().
+
+## Memory Leaks
+
+A memory leak occurs when a program allocates memory but fails to release it properly, leading to a gradual increase of unused memory in the memory heap. In such cases, garbage collection is not activated. Examples are:
+
+- `Global variables`: in long-running applications, they can lead to memory leaks since they remain in memory for the lifetime of the application because the global scope (window object in Browsers, or global object in NodeJs) always holds a reference to them, which prevents them from being garbage collected.
+
+- `Event listeners`: can lead to memory leaks if not properly removed, because they can keep references to objects that are no longer needed. 
+
+- `setInterval function`: can lead to memory leaks if the interval is not cleared with [clearInterval](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval), as the callback function can keep reference of objects that are no longer needed.
+
+## WebAssembly 
+
+WebAssembly (Wasm) provides a standard binary instruction format that allows code written in various programming languages (C, C++, Rust, JavaScript, etc.) to run with high performance, at near-native speed, in web browsers and other environments
