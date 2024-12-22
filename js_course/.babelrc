@@ -1,0 +1,7 @@
+// Use .babelrc when you need configuration scoped to specific directories or parts of a project. If placed in the root directory, configurations will apply globally to the entire project, including its subdirectories.
+
+// Use babel.config.js for a global, project-wide configuration, especially useful in larger projects or monorepos.
+
+{
+"presets": ["@babel/preset-env"]
+}
