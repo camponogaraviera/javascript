@@ -1,5 +1,4 @@
 <!-- Badges: -->
-
 [![Node.js](https://img.shields.io/badge/Node.js-v22.14.0-informational)](https://nodejs.org/en)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-orange?style=flat-square)](https://github.com/camponogaraviera/javascript/pulls)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/camponogaraviera/javascript/graphs/commit-activity)
@@ -186,56 +185,48 @@ This repository introduces JavaScript from the ground up, spanning classes (ES6)
 
 - [style-guide.md](js_course/notebooks/17_styleGuide/style-guide.md)
 
- <!-- ################################################################ -->
-
 # Install Dependencies
 
 1. Install [Node Version Manager](https://github.com/nvm-sh/nvm) (NVM):
-
 ```bash
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ```
 
 2. Install the latest LTS release version of Node.js:
-
 ```bash
 nvm install --lts && nvm use --lts && node -v
 ```
 
 NPM is automatically updated to the version bundled with Node.js. If required, one can manually update NPM to the latest stable version:
-
 ```bash
 npm i -g npm@latest && npm -v
 ```
 
 3. Update Yarn to the latest stable version:
-
 ```bash
 corepack enable && yarn set version stable && yarn install && yarn -v
 ```
 
-4. Install all dependencies listed in the `js_course/package.json` file:
-
+4. Install package dependencies listed in the `js_course/package.json` file:
 ```bash
 cd js_course && yarn
 ```
 
-5. Run a test:
+# Run Tests
 
 ```bash
 yarn test
 ```
 
-6. Lint:
+# Linting
 
-```bash
-yarn eslint .
-```
-
-or
-
+Lint to check for code quality & convention:
 ```bash
 yarn lint
+```
+or
+```bash
+yarn eslint .
 ```
 
 # Run All Modules
@@ -243,8 +234,6 @@ yarn lint
 ```bash
 cd js_course && node notebooks/16_workerThreads/run-modules.js
 ```
-
- <!-- ################################################################ -->
 
 # Notes
 
