@@ -14,10 +14,10 @@ It receives two arguments:
 [1] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
 */
 
-// First example: checking if all numbers are even.
+// First example: checking whether numbers are even.
 
 const numbers = [1, 2, 3, 4, 5];
-const allEven = numbers.every(item => item % 2 === 0);
+const allEven = numbers.every((item) => item % 2 === 0);
 // Logging result:
 console.log(allEven); // Output: false (not all numbers are even)
 
@@ -25,7 +25,7 @@ console.log(allEven); // Output: false (not all numbers are even)
 
 const words = ["apple", "almond", "airplane", "agile"];
 const allMatch = words.every((word, index, array) => {
-  return word.length > 3 && word[0] === array[0][0] ;
+  return word.length > 3 && word[0] === array[0][0];
 });
 // Logging result:
 console.log(allMatch); // Output: true (all words meet the criteria)

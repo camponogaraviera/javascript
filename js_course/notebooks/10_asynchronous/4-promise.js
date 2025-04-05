@@ -17,10 +17,10 @@ const promise = new Promise((resolve, reject) => {
   /*
 	The promise constructor takes a function as an argument.
 	This function takes two parameters: resolve and reject.
-	Start asynchronous work here.
 	Use resolve(value) to return a successful result.
 	Use reject(error) to return an error.
 	*/
+  // Start asynchronous work:
   setTimeout(() => {
     const success = true;
     if (!success) {

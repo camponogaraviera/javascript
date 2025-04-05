@@ -1,4 +1,5 @@
 <!-- Badges: -->
+
 [![Node.js](https://img.shields.io/badge/Node.js-v22.14.0-informational)](https://nodejs.org/en)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-orange?style=flat-square)](https://github.com/camponogaraviera/javascript/pulls)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/camponogaraviera/javascript/graphs/commit-activity)
@@ -177,20 +178,26 @@ This repository introduces JavaScript from the ground up, spanning classes (ES6)
 - [script.js](js_course/notebooks/15_tests/script.js)
 - [script.test.js](js_course/notebooks/15_tests/script.test.js)
 
-## 17. Style Guide
+## 17. Worker Threads
 
-- [style-guide.md](js_course/notebooks/16_styleGuide/style-guide.md)
+- [run-modules.js](js_course/notebooks/16_workerThreads/run-modules.js)
+
+## 18. Style Guide
+
+- [style-guide.md](js_course/notebooks/17_styleGuide/style-guide.md)
 
  <!-- ################################################################ -->
 
-# Run Modules
+# Install Dependencies
 
 1. Install [Node Version Manager](https://github.com/nvm-sh/nvm) (NVM):
+
 ```bash
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ```
 
 2. Install the latest LTS release version of Node.js:
+
 ```bash
 nvm install --lts && nvm use --lts && node -v
 ```
@@ -231,16 +238,22 @@ or
 yarn lint
 ```
 
+# Run All Modules
+
+```bash
+cd js_course && node notebooks/16_workerThreads/run-modules.js
+```
+
  <!-- ################################################################ -->
 
 # Notes
 
-1. It is not a best practice to mix different package managers. Use either `yarn` (recommended) or `npm` to install packages during the development cycle. 
+1. It is not a best practice to mix different package managers. Use either `yarn` (recommended) or `npm` to install packages during the development cycle.
 2. When using `yarn.lock`, there is no need to keep the `package-lock.json`.
 3. Do not `.gitignore` the `yarn.lock` file, as it ensures that the exact versions of dependencies are installed, even if the versions in `package.json` are defined using version ranges (such as ^ or ~).
 4. The `.cjs` extension executes files in CommonJS module syntax.
 5. Setting key-value `"type": "module"` in `package.json` enables ECMAScript (ESM) syntax (e.g., import/export syntax) in `.js` files.
-6. Babel (`.babelrc`) can also be used to transpile modern JavaScript (ES6+) code into an older JavaScript version (e.g., ES5) to ensure compatibility with environments (browsers, older Node.js versions) that do not support certain modern JavaScript syntax (e.g., `let`, `const`, `arrow functions`, `async/await`, `import/export`). Polyfills for missing built-in features (`Promise`, `fetch`, `Map`, `Set`, etc.) can be added by configuring the `@babel/preset-env` preset in the `.babelrc` file with `core-js` and the `useBuiltIns` option.
+6. Babel (`.babelrc`) can also be used to transpile modern JavaScript (ES6+) code into an older JavaScript version (e.g., ES5) to ensure compatibility with environments (e.g., browsers, older Node.js versions) that do not support certain modern JavaScript syntax (e.g., `let`, `const`, `arrow functions`, `async/await`, `import/export`). Polyfills for missing built-in features (`Promise`, `fetch`, `Map`, `Set`, etc.) can be added by configuring the `@babel/preset-env` preset in the `.babelrc` file with `core-js` and the `useBuiltIns` option.
 
 # References
 

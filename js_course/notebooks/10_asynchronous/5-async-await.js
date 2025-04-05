@@ -3,7 +3,7 @@
 Async and Await were introduced in ECMAScript 2017 (ES8). They are syntactic sugars used to write asynchronous functions as if they were synchronous. 
 They provide an alternative way to the promise syntax.
 
-The `await` keyword is used to replace ".then" in promise().then(callback). It gets the result of the promise.
+The `await` keyword is used to replace ".then" in promise().then(callback) when consuming the promise, i.e., it gets the result of the promise.
 
 - Before ES13, the `await` keyword could only be used inside an asynchronous function.
 - After ES13, the `await` keyword can be used at the top level, i.e., outside the async function (in the global scope).
