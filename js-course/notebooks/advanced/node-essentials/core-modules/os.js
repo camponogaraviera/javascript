@@ -1,4 +1,4 @@
-// OS Module:
+// OS Module: Provides information about the operating system, such as CPU architecture, memory, etc.
 
 //const os = require("os");
 import os from "os";

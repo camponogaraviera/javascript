@@ -7,13 +7,15 @@ Programming paradigms (styles of programming).
 
 3. Imperative programming: is a style of programming that follows a step-by-step instruction with an algorithm-like implementation (low level of abstraction).
 
-4. Procedural programming: is a subset of imperative programming where the focus is on writing procedures or functions that operate on data. One drawback is the potential for excessive functions operating on the same data, resulting in what is commonly known as "spaghetti code".
+4. Procedural programming: is a subset of imperative programming that emphasizes writing procedures or functions operating on data. As systems grow, managing state and interactions across many functions can become difficult. If not carefully structured, this can lead to tangled and unmaintainable logic, often referred to as "spaghetti code".
 
-5. Object-oriented programming (OOP): is a programming paradigm supported by many programming languages such as C#, Java, Ruby, C++, Python, and JavaScript. OOP can be used to avoid the spaghetti code from procedural programming. Instead of writing multiple functions that operate on global data, OOP encapsulates related data and behavior within classes.
+5. Object-oriented programming (OOP): is a programming paradigm supported by many programming languages such as C#, Java, Ruby, C++, Python, and JavaScript. It is useful to reduce spaghetti code by grouping related data and behaviors within classes, providing encapsulation and abstraction.
+
+Note: "spaghetti code" is not unique to procedural programming, it can occur in any paradigm when control flow and dependencies become overly complex. Historically, the term referred to unstructured code with excessive GOTO statements.
 
 The 4 pillars (core concepts) of OOP are:
 
-1 - Encapsulation: is a concept used to organized the code into reusable objects (units) that contain both data (attributes or properties) and behaviors (functions a.k.a methods). Objects are implemented with classes and behaviors are methods within the class. 
+1 - Encapsulation: is a concept used to organize the code into reusable objects (units) that contain both data (attributes or properties) and behaviors (functions a.k.a methods). Objects are implemented with classes, and behaviors are methods within the class. 
 
 2 - Abstraction: is a concept used to hide complex implementation details (which are not required to be exported) of the code from the user. This is typically achieved by defining private properties and methods using the # syntactic marker and the let keyword.
 

@@ -1,6 +1,6 @@
 // Exporting in CommonJS module syntax (`module.exports`):
 
-console.log("Hello from 2_exporting.cjs!\n");
+console.log("Hello from exporting.cjs!\n");
 
 let message1 = "Regular Function exported in CJS!"; // Implementation detail. Does not need to be exported.
 

@@ -1,4 +1,4 @@
-// File System Module:
+// File System Module: Used to read, write, and manipulate files and directories.
 
 //const fs = require("fs");
 import fs from "fs";
@@ -7,9 +7,6 @@ import fs from "fs";
 fs.readdir("./", (err, result) => {
   // The first argument specifies the current path directory.
   // The second argument is a callback function with two parameters: error and result.
-  if (err) {
-    console.log("Error", err);
-  } else {
-    console.log("Files", result);
-  }
+  if (err) throw err;
+  console.log("Files", result);
 });

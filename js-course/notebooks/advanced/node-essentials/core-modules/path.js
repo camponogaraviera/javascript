@@ -1,4 +1,4 @@
-// Path Module:
+// Path Module: Provides utilities for working with file and directory paths.
 
 // ESM Syntax:
 import path from "path";
