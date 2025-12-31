@@ -1,7 +1,7 @@
 <!-- Badges: -->
 
-[![Node.js](<https://img.shields.io/badge/Node.js_(LTS)-v22.20.0-informational>)](https://nodejs.org/en)
-[![YARN](https://img.shields.io/badge/YARN-4.10.3-informational)](https://yarnpkg.com/)
+[![Node.js](<https://img.shields.io/badge/Node.js_(LTS)-v24.12.0-informational>)](https://nodejs.org/en)
+[![YARN](https://img.shields.io/badge/YARN-4.12.0-informational)](https://yarnpkg.com/)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-orange?style=flat-square)](https://github.com/camponogaraviera/javascript/pulls)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/camponogaraviera/javascript/graphs/commit-activity)
 
