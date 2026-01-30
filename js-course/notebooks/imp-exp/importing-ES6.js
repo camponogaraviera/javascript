@@ -1,26 +1,21 @@
-// Named import:
-import { regularFunction } from "./exporting-ES6.js";
-
-const returnedValue = regularFunction();
-console.log(returnedValue); // Output: Hello from regularFunction().
-
-// ####################################################################
-
-// Named import with alias:
-import { arrowFunction as arrowFunctionAlias } from "./exporting-ES6.js";
-
-const returnedValue2 = arrowFunctionAlias();
-console.log(returnedValue2); // Output: Hello from arrowfunction().
-
-// ####################################################################
+console.log("Importing from importing-ES6.js!\n");
 
 // Default/direct import:
-import arrowFunction2 from "./exporting-ES6.js";
+import regularFunction from "./exporting-ES6.js";
 
-const returnedValue3 = arrowFunction2();
-console.log(returnedValue3); // Output: Hello from arrowFunction2().
+// Named import:
+import { regularFunction2 } from "./exporting-ES6.js";
+
+// Named import with alias:
+import { arrowFunction as Function } from "./exporting-ES6.js";
 
 // ####################################################################
 
-// The following method won't work because `require` is not defined in the ES6 module scope:
-// const { regularFunction } = require("./exporting-ES6.js");
+let returnedValue = regularFunction();
+console.log(returnedValue); // Output: Hello from regularFunction().
+
+returnedValue = regularFunction2();
+console.log(returnedValue); // Output: Hello from regularFunction2().
+
+returnedValue = Function();
+console.log(returnedValue); // Output: Hello from arrowFunction().

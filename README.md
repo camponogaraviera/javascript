@@ -1,6 +1,6 @@
 <!-- Badges: -->
 
-[![Node.js](<https://img.shields.io/badge/Node.js_(LTS)-v24.12.0-informational>)](https://nodejs.org/en)
+[![Node.js](<https://img.shields.io/badge/Node.js_(LTS)-v24.13.0-informational>)](https://nodejs.org/en)
 [![YARN](https://img.shields.io/badge/YARN-4.12.0-informational)](https://yarnpkg.com/)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-orange?style=flat-square)](https://github.com/camponogaraviera/javascript/pulls)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/camponogaraviera/javascript/graphs/commit-activity)
@@ -424,6 +424,10 @@ yarn
 Lint to check for code quality and style consistency:
 
 ```bash
+cd js-course
+```
+
+```bash
 yarn lint
 ```
 
@@ -443,6 +447,10 @@ yarn eslint .
   <summary><h1 id="run_tests"> 12. Run Tests </h1></summary>
 
 ```bash
+cd js-course
+```
+
+```bash
 yarn test
 ```
 
@@ -454,6 +462,10 @@ yarn test
 <!-- #region 13. Run All Modules -->
 <details>
   <summary><h1 id="run_modules"> 13. Run All Modules </h1></summary>
+
+```bash
+cd js-course
+```
 
 ```bash
 node notebooks/run-modules/run-modules.js
