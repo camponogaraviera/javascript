@@ -5,9 +5,9 @@ Reference data types (a.k.a mutable or non-primitive data types) in Javascript E
 
 In JavaScript, an array is a special kind of object that have numbered indexes. Arrays `[]` can store values of any data type. 
 
-2. Hash table `{}`, `Map()`, and `Set()`
+2. Plain Objects `{}`, `Map()`, and `Set()`
 
-- In JavaScript, hash table keys are converted to strings data types, while the values associated with these keys can be of any data type.
+- In JavaScript, keys of plain objects are converted into string data types, while the values associated with these keys can be of any data type.
 - A Map maintains the order of insertion. It can only accept two arguments at a time. 
 - A Set stores unique values of any data type.
 
@@ -30,7 +30,7 @@ let x;
 x = [1, 2, "red", "green", true, false, null];
 console.log(typeof x); // object
 
-// Example of a Hash Table:
+// Example of a objects:
 x = { key1: "value1", key2: "value2" };
 console.log(typeof x); // object
 
@@ -41,7 +41,7 @@ console.log(x.set("key1", null)); // Map(1) { 'key1' => null }
 // Example of a Map with multiple key-value pairs:
 x = new Map([
   ["key1", null],
-  ["key2", 9]
+  ["key2", 9],
 ]);
 console.log(x); // Map(2) { 'key1' => null, 'key2' => 9 }
 

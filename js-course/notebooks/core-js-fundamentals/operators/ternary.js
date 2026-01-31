@@ -1,7 +1,7 @@
 // Ternary Operator.
 
-let err = false;
-let statusCode = err ? 400 : 200; // If err is true, statusCode is 400, otherwise it is 200.
+const err = false;
+const statusCode = err ? 400 : 200; // If err is true, statusCode is 400, otherwise it is 200.
 console.log(`Status Code: ${statusCode}`); // 200
 /*
 Equivalent if-else expression:

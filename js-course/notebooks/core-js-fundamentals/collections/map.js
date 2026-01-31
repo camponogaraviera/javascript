@@ -1,7 +1,7 @@
 /* A Map maintains the order of insertion. It can only accept two arguments at a time. */
 
 // Creating a hash table using Map()
-let customMap = new Map();
+const customMap = new Map();
 
 // Adding key-value pairs
 customMap.set("key1", "value1");
@@ -21,4 +21,3 @@ const customMap2 = new Map([
 ]);
 
 console.log(customMap2); // Map(2) { 'key1' => null, 'key2' => 9 }
-

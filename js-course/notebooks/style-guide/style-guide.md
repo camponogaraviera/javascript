@@ -161,7 +161,7 @@ console.log(gen.next().value); // 20
 # Use Object-Oriented Programming (OOP) 
 
 - Instead of writing multiple functions that operate on global data, encapsulate related data and behavior within classes avoiding spaghetti code. 
-- Use abstraction to hide complex implementation details from the user using the `let` keyword and `#` to define private methods and fields.
+- Use abstraction to hide complex implementation details from the user using closure variables or `#` to define private methods and fields.
 
 # Follow the DRY (Don't Repeat Yourself) Principle
 

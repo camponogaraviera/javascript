@@ -7,7 +7,7 @@ import regularFunction from "./exporting-ES6.js";
 import { regularFunction2 } from "./exporting-ES6.js";
 
 // Named import with alias:
-import { arrowFunction as Function } from "./exporting-ES6.js";
+import { arrowFunction as arrowFunctionAlias } from "./exporting-ES6.js";
 
 // ####################################################################
 
@@ -17,5 +17,5 @@ console.log(returnedValue); // Output: Hello from regularFunction().
 returnedValue = regularFunction2();
 console.log(returnedValue); // Output: Hello from regularFunction2().
 
-returnedValue = Function();
+returnedValue = arrowFunctionAlias();
 console.log(returnedValue); // Output: Hello from arrowFunction().

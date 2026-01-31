@@ -37,16 +37,6 @@ const runModuleInWorker = async (file) => {
 const results = await Promise.allSettled(jsFiles.map(runModuleInWorker));
 
 // Log the results:
-for (const result of results) {
-  const file = jsFiles[results.indexOf(result)];
-  if (result.status === "fulfilled") {
-    console.log(`✅ ${file} ran without error.`);
-  } else {
-    console.error(`❌ ${result.reason.message}`);
-  }
-}
-
-/*
 results.forEach((result, i) => {
   const file = jsFiles[i];
   if (result.status === "fulfilled") {
@@ -55,5 +45,3 @@ results.forEach((result, i) => {
     console.error(`❌ ${result.reason.message}`);
   }
 });
-
-*/

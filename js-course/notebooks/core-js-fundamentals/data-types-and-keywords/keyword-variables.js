@@ -12,10 +12,10 @@ Variables can only be declared once. Trying to declare a variable twice renders 
 */
 
 // Declaring a variable with let:
-let _name = "Alice";
-console.log(_name); // Output: Alice
-_name = "Bob";
-console.log(_name); // Output: Bob
+let name = "Alice";
+console.log(name); // Output: Alice
+name = "Bob";
+console.log(name); // Output: Bob
 
 // Declaring a variable with const:
 const number = 30;

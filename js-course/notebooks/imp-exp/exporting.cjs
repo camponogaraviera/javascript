@@ -3,7 +3,7 @@
 console.log("Exporting from exporting.cjs!\n");
 
 function regularFunction() {
-  let message = "Hello from regularFunction()!"; // Implementation detail. Does not need to be exported.
+  const message = "Hello from regularFunction()!"; // Implementation detail. Does not need to be exported.
 
   // Return an object literal with one property:
   return {

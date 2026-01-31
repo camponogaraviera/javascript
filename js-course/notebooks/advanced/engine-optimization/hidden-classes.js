@@ -26,8 +26,8 @@ function Point(x, y) {
 }
 
 // Creating objects with the same hidden class:
-let p1 = new Point(1, 2); // Read Access (property retrieval).
-let p2 = new Point(3, 4);
+const p1 = new Point(1, 2); // Read Access (property retrieval).
+const p2 = new Point(3, 4);
 // p1 and p2 share the same hidden class because they have the same structure (x, y).
 
 // Adding properties in the same order:

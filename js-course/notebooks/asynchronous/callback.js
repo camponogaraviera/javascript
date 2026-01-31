@@ -11,13 +11,13 @@ const callback = (user) => {
 };
 
 // Asynchronous function using regular function syntax:
-function asyncFunction(_id, _callback) {
+function asyncFunction(id, callbackFn) {
   // setTimeout simulates an asynchronous operation.
   setTimeout(() => {
     console.log(
       "Fetching user from database. This was displayed after 1 second.",
     );
-    _callback({ id: _id, name: "Bob" }); // The callback returns the result.
+    callbackFn({ id, name: "Bob" }); // The callback returns the result.
   }, 1000); // Await for 1 second (1000 miliseconds).
 }
 

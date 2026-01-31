@@ -16,17 +16,17 @@ switch (expression) {
 The default statement is executed if none of the case clauses (case caseExpression) match the value defined by `expression`.
 */
 
-// Check whether a number is negative, zero or positive:
+// Check whether a number is negative, zero or positive (note: switch(true) is less common than if/else in production style guides):
 
 let number = -1;
 switch (true) {
-case (number < 0):
+case number < 0:
   console.log("The number is negative.");
   break;
-case (number === 0):
+case number === 0:
   console.log("The number is zero.");
   break;
-case (number > 0):
+case number > 0:
   console.log("The number is positive.");
   break;
 default:
@@ -37,7 +37,7 @@ default:
 
 number = 2.3;
 switch (true) {
-case isNaN(number):
+case Number.isNaN(number):
   console.log("The number is NaN.");
   break;
 case Number.isInteger(number):
@@ -63,6 +63,8 @@ case "friday":
   break;
 case "saturday":
 case "sunday":
-default:
   console.log("Weekend.");
+  break;
+default:
+  console.log("Invalid day.");
 }

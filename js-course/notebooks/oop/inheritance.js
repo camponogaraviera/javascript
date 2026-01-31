@@ -35,7 +35,7 @@ class QuadrupedRobot extends SmartRobot {
 
 }
 
-let spot = new QuadrupedRobot("Spot");
+const spot = new QuadrupedRobot("Spot");
 spot.introduce(); // I am Spot, a quadruped robot!
 spot.walk(); // Spot is walking on 4 legs.
 spot.seek(); // Spot is seeking.

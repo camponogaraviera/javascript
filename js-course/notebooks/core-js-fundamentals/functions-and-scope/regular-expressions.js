@@ -1,7 +1,7 @@
 /* Regular Expressions (regex) */
 
-// Create a regular expression to match email addresses:
-let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+// Create a simple regular expression to match email addresses (demo only, not full validation):
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 function checkEmail(emailAddress) {
   if (emailRegex.test(emailAddress)) {
@@ -12,8 +12,8 @@ function checkEmail(emailAddress) {
 }
 
 // Test if a string is a valid email address:
-let email1 = "name$@example.com";
-let email2 = "name@example.com";
+const email1 = "name$@example.com";
+const email2 = "name@example.com";
 
 checkEmail(email1);
 checkEmail(email2);

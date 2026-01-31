@@ -19,13 +19,13 @@ console.log(array.includes(3, 2)); // Output: true (there is an item whose value
 // Example 2: checking if the array includes an object.
 
 // Define an array containing two objects:
-const array2 = [{1:11},{2:22}];
+const array2 = [{ 1: 11 }, { 2: 22 }];
 // Logging result:
-console.log(array2.includes({1:11})); // Output: false (it checks for reference not values).
+console.log(array2.includes({ 1: 11 })); // Output: false (it checks for reference not values).
 
 // Define two separate objects:
-const obj1 = {1:11};
-const obj2 = {2:22};
+const obj1 = { 1: 11 };
+const obj2 = { 2: 22 };
 // Logging result:
 const array3 = [obj1, obj2];
 console.log(array3.includes(obj1)); // Output: true

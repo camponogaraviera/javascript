@@ -7,6 +7,9 @@ import fs from "fs";
 fs.readdir("./", (err, result) => {
   // The first argument specifies the current path directory.
   // The second argument is a callback function with two parameters: error and result.
-  if (err) throw err;
+  if (err) {
+    console.error("Failed to read directory:", err);
+    return;
+  }
   console.log("Files", result);
 });

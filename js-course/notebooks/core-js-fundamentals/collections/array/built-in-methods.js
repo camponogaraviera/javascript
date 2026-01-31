@@ -25,7 +25,7 @@ const numArray = [23, 3, 6, 2, 1];
 console.log(Array.isArray(numArray)); // Output: True
 
 // Get the length of the array:
-let length = numArray.length;
+const length = numArray.length;
 console.log(length); // Output: 5
 
 // Reading the first element of the array (access):
@@ -36,7 +36,7 @@ numArray[2] = 10;
 console.log(numArray); // Output: [23, 3, 10, 2, 1]
 
 // Get the index of the value 3 in the array (searching):
-let index = numArray.indexOf(3);
+const index = numArray.indexOf(3);
 console.log(index); // Output: 1
 
 // Remove an item from a specific position (index). Defaults to the last item:
@@ -73,26 +73,30 @@ console.log(numArray.slice(0, 2)); // Output: [0, 3]
 // Return the last two elements:
 console.log(numArray.slice(-2)); // Output: [ 30, 31 ]
 
-// Reverse the array:
+// Reverse the array (mutates the original array):
 console.log(numArray.reverse()); // Output: [ 31, 30, 2, 3.5, 3, 0 ]
 
-// Sort numArray in ascending order:
+// Sort numArray in ascending order (mutates the original array):
 console.log(numArray.sort((a, b) => a - b)); // Output: [0, 2, 3, 3.5, 30, 31]
 
 // Creating a new array instance from an array-like object or iterable:
 console.log(Array.from(numArray, (x) => x + x)); // Output: [0, 4, 6, 7, 60, 62]
 
 // Another example:
-console.log(Array.from({ length: 4 }, (_, index) => ({
-  id: index.toString(),
-}))); // Output: [ { id: '0' }, { id: '1' }, { id: '2' }, { id: '3' } ]
+console.log(
+  Array.from({ length: 4 }, (_, index) => ({
+    id: index.toString(),
+  })),
+); // Output: [ { id: '0' }, { id: '1' }, { id: '2' }, { id: '3' } ]
 
-// Pushing the elements of array1 into array2 using spread syntax:
+// Pushing the elements of array1 into array2 using spread syntax (mutates array1):
 const array1 = [1, 2, 3];
 const array2 = [4, 5, 6];
-array1.push([...array2]);
-console.log(array1); // Output: [1, 2, 3, [4, 5, 6]]
+array1.push(...array2);
+console.log(array1); // Output: [1, 2, 3, 4, 5, 6]
 
-// Cocatenating two arrays:
-const concatenatedList = array1.concat(array2);
-console.log(concatenatedList); // Output: [ 1, 2, 3, [ 4, 5, 6 ], 4, 5, 6 ]
+// Concatenating two arrays (does not mutate either array):
+const array3 = [1, 2, 3];
+const array4 = [4, 5, 6];
+const concatenatedList = array3.concat(array4);
+console.log(concatenatedList); // Output: [ 1, 2, 3, 4, 5, 6 ]

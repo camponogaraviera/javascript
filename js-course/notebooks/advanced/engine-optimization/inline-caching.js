@@ -26,12 +26,12 @@ function getX(point) {
   return [point.x, point.y]; // Uses property retrieval.
 }
 
-let p1 = { x: 1, y: 2 }; // Object with two properties of the same data type (Number).
-let p2 = { x: 3, y: 4 };
+const p1 = { x: 1, y: 2 }; // Object with two properties of the same data type (Number).
+const p2 = { x: 3, y: 4 };
 
 console.log(getX(p1)); // First call: the engine caches the structure of `p1`.
 console.log(getX(p1)); // Second call: cache hit, optimized retrieval. The engine uses the cached result.
 console.log(getX(p2)); // The engine avoids redundant lookups since `p2` has the same structure (x, y) as `p1`.
 
-let p3 = { y: 5, x: 6 }; // Here, p3 has a different structure (properties added in different order) than p1.
+const p3 = { y: 5, x: 6 }; // Here, p3 has a different structure (properties added in different order) than p1.
 console.log(getX(p3)); // As a result, this may trigger a cache miss and a new lookup.

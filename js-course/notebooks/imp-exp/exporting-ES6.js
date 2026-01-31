@@ -5,20 +5,20 @@ console.log("Exporting from exporting-ES6.js!\n");
 // Default export:
 export default function regularFunction() {
   // Function body:
-  let insideVariable = "Hello from regularFunction().";
+  const insideVariable = "Hello from regularFunction().";
   return insideVariable;
 }
 
 // Named export:
 export function regularFunction2() {
   // Function body:
-  let insideVariable = "Hello from regularFunction2().";
+  const insideVariable = "Hello from regularFunction2().";
   return insideVariable;
 }
 
 // Named export (via variable declaration):
 export const arrowFunction = () => {
   // Function body:
-  let insideVariable = "Hello from arrowFunction().";
+  const insideVariable = "Hello from arrowFunction().";
   return insideVariable;
 };

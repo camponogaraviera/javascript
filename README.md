@@ -29,11 +29,11 @@ Modern JS features include: import/export keywords (ES6), classes (ES6), async/a
     - keyword-variables.js
     - dynamic-typing.js
   - 2.2 [Operators](#operators)
+    - comparison.js
+    - ternary.js
+    - modulo.js
     - spread.js
     - rest.js
-    - ternary.js
-    - comparison.js
-    - modulo.js
   - 2.3 Control Flow
     - 2.3.1 [Conditions](#conditions)
       - if-else.js
@@ -70,8 +70,7 @@ Modern JS features include: import/export keywords (ES6), classes (ES6), async/a
         - reduce.js
         - every.js
         - some.js
-    - 2.5.2 [Hash Table](#hash_table)
-      - Intro and Big O
+    - 2.5.2 [Plain Object](#plain_object)
       - built-in-methods.js
       - obj-literal.js
       - object-destructuring.js
@@ -99,14 +98,14 @@ Modern JS features include: import/export keywords (ES6), classes (ES6), async/a
   - exporting-ES6.js
   - importing-ES6.js
 - [7. Advanced Concepts](#advanced)
-  - 7.1 Concurrency
-    - 7.1.1 Multithreading
-    - 7.1.2 Multiprocessing
-    - 7.1.3 Asynchronous Programming
-  - 7.2 JavaScript Internals
-    - 7.2.1 Runtime Environment
-    - 7.2.2 Memory Management
-    - 7.2.3 WebAssembly
+  - 7.1 JavaScript Internals
+    - 7.1.1 Runtime Environment
+    - 7.1.2 Memory Management
+    - 7.1.3 WebAssembly
+  - 7.2 Concurrency
+    - 7.2.1 Multithreading
+    - 7.2.2 Multiprocessing
+    - 7.2.3 Asynchronous Programming
   - 7.3 Node.js Essentials
     - 7.3.1 Node.js vs. Deno
     - 7.3.2 Core Modules
@@ -162,11 +161,11 @@ Modern JS features include: import/export keywords (ES6), classes (ES6), async/a
   <details>
     <summary id="operators"><h2> 2.2 Operators </h2></summary>
   
-  - 2.2.1 [spread.js](js-course/notebooks/core-js-fundamentals/operators/spread.js)
-  - 2.2.2 [rest.js](js-course/notebooks/core-js-fundamentals/operators/rest.js)
-  - 2.2.3 [ternary.js](js-course/notebooks/core-js-fundamentals/operators/ternary.js)
-  - 2.2.4 [comparison.js](js-course/notebooks/core-js-fundamentals/operators/comparison.js)
-  - 2.2.5 [modulo.js](js-course/notebooks/core-js-fundamentals/operators/modulo.js)
+  - 2.2.1 [comparison.js](js-course/notebooks/core-js-fundamentals/operators/comparison.js)
+  - 2.2.2 [ternary.js](js-course/notebooks/core-js-fundamentals/operators/ternary.js)
+  - 2.2.3 [modulo.js](js-course/notebooks/core-js-fundamentals/operators/modulo.js)
+  - 2.2.4 [spread.js](js-course/notebooks/core-js-fundamentals/operators/spread.js)
+  - 2.2.5 [rest.js](js-course/notebooks/core-js-fundamentals/operators/rest.js)
   
   </details>
   <!-- #endregion -->
@@ -234,12 +233,11 @@ Modern JS features include: import/export keywords (ES6), classes (ES6), async/a
     - [every.js](js-course/notebooks/core-js-fundamentals/collections/array/every.js)
     - [some.js](js-course/notebooks/core-js-fundamentals/collections/array/some.js)
   
-  <h3 id="hash_table">2.5.2 Hash Table</h3>
+  <h3 id="plain_object">2.5.2 Plain Object</h3>
   
-  - [Intro and Big O](js-course/notebooks/core-js-fundamentals/collections/hash-table/intro-and-big-o.md)
-  - [built-in-methods.js](js-course/notebooks/core-js-fundamentals/collections/hash-table/built-in-methods.js)
-  - [obj-literal.js](js-course/notebooks/core-js-fundamentals/collections/hash-table/obj-literal.js)
-  - [object-destructuring.js](js-course/notebooks/core-js-fundamentals/collections/hash-table/object-destructuring.js)
+  - [built-in-methods.js](js-course/notebooks/core-js-fundamentals/collections/plain-object/built-in-methods.js)
+  - [obj-literal.js](js-course/notebooks/core-js-fundamentals/collections/plain-object/obj-literal.js)
+  - [object-destructuring.js](js-course/notebooks/core-js-fundamentals/collections/plain-object/object-destructuring.js)
   
   <h3 id="map">2.5.3 Map</h3>
   
@@ -317,17 +315,17 @@ Modern JS features include: import/export keywords (ES6), classes (ES6), async/a
 <details>
   <summary><h1 id="advanced"> 7. Advanced Concepts </h1></summary>
 
-## 7.1 Concurrency
+## 7.1 JavaScript Internals
+
+- 7.1.1 [Runtime Environment](js-course/notebooks/advanced/js-internals/runtime-env.md): Web API, JS Engine (pipeline, call stack, memory heap), Callback Queue, and Event Loop.
+
+- 7.1.2 [Memory Management](js-course/notebooks/advanced/js-internals/memory-management.md): Garbage Collection and Memory Leaks.
+
+- 7.1.3 [WebAssembly](js-course/notebooks/advanced/js-internals/web-assembly.md)
+
+## 7.2 Concurrency
 
 - [Concurrency](js-course/notebooks/advanced/concurrency/concurrency.md)
-
-## 7.2 JavaScript Internals
-
-- 7.2.1 [Runtime Environment](js-course/notebooks/advanced/js-internals/runtime-env.md): Web API, JS Engine (pipeline, call stack, memory heap), Callback Queue, and Event Loop.
-
-- 7.2.2 [Memory Management](js-course/notebooks/advanced/js-internals/memory-management.md): Garbage Collection and Memory Leaks.
-
-- 7.2.3 [WebAssembly](js-course/notebooks/advanced/js-internals/web-assembly.md)
 
 ## 7.3 Node.js Essentials
 

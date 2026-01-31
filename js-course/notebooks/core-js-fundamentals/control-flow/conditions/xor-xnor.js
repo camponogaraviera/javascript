@@ -1,13 +1,13 @@
 // XOR
 console.log("XOR:");
-console.log(false ^ false); // 0
-console.log(true ^ false); // 1
-console.log(false ^ true); // 1
-console.log(true ^ true); // 0
+console.log(false !== false); // false
+console.log(false !== true); // true
+console.log(true !== false); // true
+console.log(true !== true); // false
 
 // XNOR
 console.log("XNOR:");
-console.log(!(false ^ false)); // true
-console.log(!(true ^ false)); // false
-console.log(!(false ^ true)); // false
-console.log(!(true ^ true)); // true
+console.log(false === false); // true
+console.log(false === true); // false
+console.log(true === false); // false
+console.log(true === true); // true

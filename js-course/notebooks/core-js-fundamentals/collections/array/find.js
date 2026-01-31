@@ -19,7 +19,7 @@ const foundNumber = numbers.find((item) => item > 2);
 console.log(foundNumber); // Output: 3
 
 // Example 2: finding the first object with a specific property value.
-const array = [{id:1},{id:2},{id:3}];
-const result = array.find(item => item.id == 3); 
+const array = [{ id: 1 }, { id: 2 }, { id: 3 }];
+const result = array.find((item) => item.id === 3); 
 // Logging result:
 console.log(result); // Output: {id:3}

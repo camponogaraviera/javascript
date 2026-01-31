@@ -8,8 +8,8 @@ One way to avoid a callback hell is to use named functions instead of anonymous 
 // Example of an asynchronous function with a Callback hell structure using anonymous functions:
 
 console.log("Running asynchronous version.");
-const user_id = 2;
-fetchUserById(user_id, (user) => {
+const userId = 2;
+fetchUserById(userId, (user) => {
   fetchUserRepositories(user.name, (repos) => {
     fetchRepositoryCommit(repos[0], (commit) => {
       console.log(`First commit message: ${commit}.`);
@@ -23,10 +23,10 @@ The inline callbacks (user) => { ... }, (repos) => { ... }, and (commit) => { ..
 
 // Defining the asynchronous functions:
 
-function fetchUserById(_user_id, callback) {
+function fetchUserById(userId, callback) {
   setTimeout(() => {
     console.log("Fetching user from database...");
-    const mockUserData = { id: _user_id, name: "camponogaralucas" };
+    const mockUserData = { id: userId, name: "camponogaralucas" };
     callback(mockUserData); // The callback returns the result.
   }, 1000); // Await for 1 second (1000 milisecond).
 }
@@ -62,7 +62,7 @@ console.log(`First commit message: ${commit}.`);
 // Example of how to avoid a Callback hell structure using named functions:
 
 console.log("Running synchronous-like version.\n");
-fetchUserById(user_id, getRepos);
+fetchUserById(userId, getRepos);
 
 function getRepos(user) {
   fetchUserRepositories(user.name, getCommit);

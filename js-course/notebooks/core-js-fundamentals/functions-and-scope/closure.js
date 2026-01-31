@@ -6,16 +6,13 @@ In JavaScript, closures are created at function creation time whenever a nested 
 Note: Lexical scoping refers to how variable access is determined by the position (structure) of the code, not by how the functions are executed.
 */
 
-function outerFunction(name) {
-  return function innerFunction(age) {
-    console.log(`Name: ${name}, Age: ${age}`);
+function createAdder(x) {
+  return function (y) {
+    return x + y;
   };
 }
-  
-const person1 = outerFunction("Bob");
-person1(30); // Output: Name: Bob, Age: 30
-  
-// Even after the outerFunction has finished execution, the innerFunction retains access to the variable "name" because of closure.
-  
-  
-  
+
+const add10 = createAdder(10);
+console.log(add10(10)); // Outputs: 20
+
+// Even after the createAdder has finished execution, the innerFunction retains access to the variable "x" because of closure.

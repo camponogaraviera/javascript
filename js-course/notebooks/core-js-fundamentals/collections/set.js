@@ -1,7 +1,7 @@
 /* A Set stores unique values of any data type. */
 
 // Creating an empty set:
-let set = new Set();
+const set = new Set();
 
 // Adding values:
 set.add("value1");

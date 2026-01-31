@@ -1,14 +1,14 @@
 /*
-Example of Abstraction using the let keyword.
+Example of Abstraction using a closure.
 */
 
 function Abstraction() {
   // public property:
   this.publicProperty = "public property";
   // private property:
-  let privateProperty = "private property";
+  const privateProperty = "private property";
   // private method:
-  let privateMethod = function () {
+  const privateMethod = function () {
     console.log("private method");
     // It is not possible to access public properties through a private method. The next line will throw an error:
     //console.log(this.publicProperty); // Output: TypeError: Cannot read properties of undefined (reading 'publicProperty')
@@ -23,7 +23,7 @@ function Abstraction() {
   };
 }
 
-let abs = new Abstraction();
+const abs = new Abstraction();
 console.log(abs.publicProperty); // Ouput: "public property"
 console.log(abs.privateProperty); // Ouput: undefined.
 abs.publicMethod(); // Ouput: "public property" "private property" "private method"

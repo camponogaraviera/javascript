@@ -1,6 +1,6 @@
 // Object destructuring is a way of extracting data from objects.
 
-let hash = { fname: "Given Name", sname: "Surname" };
+const container = { fname: "Given Name", sname: "Surname" };
 
-let { fname, sname } = hash;
+const { fname, sname } = container;
 console.log(fname, sname); // Given Name Surname
