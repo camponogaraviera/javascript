@@ -61,9 +61,11 @@ class BeforeES13 {
   publicMethod() {
     console.log(this.message);
   }
-  
+
   _fakePrivateMethod() {
-    console.log(`Hello from _fakePrivateMethod, displaying ${this._fakePrivateField}`); // Still accessible from the outside.
+    console.log(
+      `Hello from _fakePrivateMethod, displaying ${this._fakePrivateField}`,
+    ); // Still accessible from the outside.
   }
 }
 
@@ -78,29 +80,31 @@ before._fakePrivateMethod(); // Output: Hello from _fakePrivateMethod, displayin
 //////////////////////////////////////////////////////////////////////
 
 class AfterES13 {
-  #realPrivateField = "#realPrivateField"; // Private field (not accessible from the outside).
+  #privateField = "#privateField"; // Private field (not accessible from the outside).
   publicField = "After ES13"; // Public field.
-  
+
   static staticMethod() {
     console.log("staticMethod");
   }
 
   publicMethod() {
     console.log(this.publicField);
-    // Accessing private property:
-    console.log(`Hello from publicMethod, displaying ${this.#realPrivateField}`);
+    // Calling private property internally:
+    console.log(`Hello from publicMethod, displaying ${this.#privateField}!`);
+    // Calling private method internally:
+    this.#privateMethod();
   }
 
   // Private method (not accessible from the outside):
-  #realPrivateMethod() {
-    console.log(`Hello from #realPrivateMethod, displaying ${this.#realPrivateField}`);
+  #privateMethod() {
+    console.log(`Hello from #privateMethod, displaying ${this.#privateField}!`);
   }
 }
 
-// Calling a static method which does not require a class instance: 
+// Calling a static method which does not require a class instance:
 AfterES13.staticMethod(); // Output: staticMethod
-// Creating a class instance: 
-const after = new AfterES13(); 
-after.publicMethod(); // Output: After ES13 Hello from publicMethod, displaying #realPrivateField
-//console.log(after.#realPrivateField); // Output: SyntaxError: Private field '#realPrivateField' must be declared in an enclosing class
-//after.#realPrivateMethod(); // Output: SyntaxError: Private field '#realPrivateMethod' must be declared in an enclosing class
+// Creating a class instance:
+const after = new AfterES13();
+after.publicMethod(); // Output: After ES13 Hello from publicMethod, displaying #privateField
+//console.log(after.#privateField); // Output: SyntaxError: Private field '#privateField' must be declared in an enclosing class
+//after.#privateMethod(); // Output: SyntaxError: Private field '#privateMethod' must be declared in an enclosing class

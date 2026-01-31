@@ -4,5 +4,5 @@ console.log("Importing from importing.cjs!\n");
 const regularFunction = require("./exporting.cjs"); // Store the exported object in a variable.
 console.log(regularFunction); // [Function: regularFunction]
 
-const returnedValue = regularFunction().attribute;
-console.log(returnedValue); // Hello from regularFunction()!
+const returnedValue = regularFunction(); // Call the imported function and store the returned value.
+console.log(returnedValue.attribute); // Hello from regularFunction()!

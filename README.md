@@ -125,8 +125,9 @@ Modern JS features include: import/export keywords (ES6), classes (ES6), async/a
 - [9. Style Guide](#style)
 - [10. Install Dependencies](#install)
 - [11. Linting](#lint)
-- [12. Run Tests](#run_tests)
-- [13. Run All Modules](#run_modules)
+- [12. Security Audit](#audit)
+- [13. Run Tests](#run_tests)
+- [14. Run All Modules](#run_modules)
 - [Notes](#notes)
 - [References](#ref)
 
@@ -440,9 +441,22 @@ yarn eslint .
 
 ---
 
-<!-- #region 12. Run Tests -->
+<!-- #region 12. Security Audit -->
 <details>
-  <summary><h1 id="run_tests"> 12. Run Tests </h1></summary>
+  <summary><h1 id="audit"> 12. Security Audit </h1></summary>
+
+```bash
+yarn npm audit
+```
+
+</details>
+<!-- #endregion -->
+
+---
+
+<!-- #region 13. Run Tests -->
+<details>
+  <summary><h1 id="run_tests"> 13. Run Tests </h1></summary>
 
 ```bash
 cd js-course
@@ -457,9 +471,9 @@ yarn test
 
 ---
 
-<!-- #region 13. Run All Modules -->
+<!-- #region 14. Run All Modules -->
 <details>
-  <summary><h1 id="run_modules"> 13. Run All Modules </h1></summary>
+  <summary><h1 id="run_modules"> 14. Run All Modules </h1></summary>
 
 ```bash
 cd js-course
