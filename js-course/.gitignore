@@ -1,0 +1,5 @@
+# Dependencies:
+node_modules/
+
+# Using Yarn instead of NPM:
+package-lock.json
